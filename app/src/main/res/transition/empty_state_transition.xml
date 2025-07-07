@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="300">
+
+    <changeBounds />
+    <changeTransform />
+    <changeClipBounds />
+    <changeImageTransform />
+
+    <fade android:fadingMode="fade_in_out">
+        <targets>
+            <target android:targetId="@id/textViewEmpty" />
+            <target android:targetId="@id/recyclerView" />
+        </targets>
+    </fade>
+
+    <slide android:slideEdge="bottom">
+        <targets>
+            <target android:targetId="@id/textViewEmpty" />
+        </targets>
+    </slide>
+</transitionSet>
+

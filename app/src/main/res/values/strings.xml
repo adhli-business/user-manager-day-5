@@ -1,3 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">user-manager</string>
+    // ...existing strings...
+
+    <!-- Error Messages -->
+    <string name="error_no_internet">No internet connection available</string>
+    <string name="error_timeout">Request timed out. Please try again</string>
+    <string name="error_server">Server error. Please try again later</string>
+    <string name="error_unauthorized">Unauthorized access</string>
+    <string name="error_forbidden">Access forbidden</string>
+    <string name="error_not_found">Resource not found</string>
+    <string name="error_unknown">An unexpected error occurred</string>
+    <string name="error_invalid_email">Please enter a valid email address</string>
+    <string name="error_invalid_firstname">First name must be at least 2 characters</string>
+    <string name="error_invalid_lastname">Last name must be at least 2 characters</string>
+    <string name="error_invalid_phone">Please enter a valid phone number</string>
+    <string name="error_invalid_field">Invalid %s</string>
+    <string name="error_username_required">Username is required</string>
+    <string name="error_password_required">Password is required</string>
 </resources>

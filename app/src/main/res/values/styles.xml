@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base styles -->
+    <style name="Widget.UserManager" parent="@android:style/Widget" />
+
+    <!-- Text Styles -->
+    <style name="TextAppearance.UserManager" parent="TextAppearance.MaterialComponents.Body1" />
+
+    <style name="TextAppearance.UserManager.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.UserManager.Subtitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Button Styles -->
+    <style name="Widget.UserManager.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Card Styles -->
+    <style name="Widget.UserManager.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+
+    <!-- Image Styles -->
+    <style name="CircleImageView">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Input Field Styles -->
+    <style name="Widget.UserManager.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+    </style>
+</resources>

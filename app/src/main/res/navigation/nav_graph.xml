@@ -1,6 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_user_list">
+
+    <fragment
+        android:id="@+id/nav_user_list"
+        android:name="com.example.user_manager.ui.userlist.UserListFragment"
+        android:label="@string/nav_users">
+        <action
+            android:id="@+id/action_userList_to_userDetail"
+            app:destination="@id/nav_user_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left">
+            <argument
+                android:name="userId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_userList_to_userAdd"
+            app:destination="@id/nav_user_add"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_user_detail"
+        android:name="com.example.user_manager.ui.userdetail.UserDetailFragment"
+        android:label="@string/nav_users">
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_userDetail_to_userEdit"
+            app:destination="@id/nav_user_edit"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left">
+            <argument
+                android:name="userId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_user_edit"
+        android:name="com.example.user_manager.ui.useredit.UserEditFragment"
+        android:label="@string/action_edit">
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_user_add"
+        android:name="com.example.user_manager.ui.useradd.UserAddFragment"
+        android:label="@string/action_add" />
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.example.user_manager.ui.search.SearchUserFragment"
+        android:label="@string/nav_search">
+        <action
+            android:id="@+id/action_search_to_userDetail"
+            app:destination="@id/nav_user_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left">
+            <argument
+                android:name="userId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_statistics"
+        android:name="com.example.user_manager.ui.statistics.UserStatisticsFragment"
+        android:label="@string/nav_statistics" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.user_manager.ui.profile.UserProfileFragment"
+        android:label="@string/nav_profile" />
+
+    <fragment
+        android:id="@+id/nav_deleted"
+        android:name="com.example.user_manager.ui.deleted.DeletedUserFragment"
+        android:label="@string/nav_deleted" />
 
 </navigation>
