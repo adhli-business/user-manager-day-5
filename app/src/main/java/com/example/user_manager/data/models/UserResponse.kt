@@ -1,4 +1,8 @@
 package com.example.user_manager.data.models
 
-class UserResponse {
-}
+data class UserResponse(
+    val users: List<User>,
+    val total: Int,
+    val skip: Int,
+    val limit: Int
+)
