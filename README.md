@@ -16,6 +16,11 @@
 - FragmentDeletedUser (mock delete)
 
 ---
+endpoint
+```
+https://dummyjson.com
+```
+---
 
 ### 📘 API DOCUMENTATION
 
