@@ -5,6 +5,9 @@ data class UserRequest(
     val lastName: String,
     val email: String,
     val gender: String,
-    val age: String?,  // atau String saja
-    val phone: String
+    val age: String,
+    val phone: String,
+    val birthDate: String? = null,
+    val address: String? = null
 )
+

@@ -30,15 +30,18 @@ class LoginViewModel : ViewModel() {
             val result = repository.getAllUsers(1, 0)
 
             result.onSuccess { response ->
-                Log.d("LOGIN", "API success: ${response.users}")
+                Log.d("LOGIN", "API success: ${response.users.size} users found")
 
-                if (response.users.isNotEmpty()) {
-                    val user = response.users.first()
+                val user = response.users.find {
+                    it.email.equals(email, ignoreCase = true) && it.password == password
+                }
+
+                if (user != null) {
                     Log.d("LOGIN", "Login success: ${user.email}")
                     _loginState.value = LoginState.Success(user)
                 } else {
-                    Log.d("LOGIN", "User list empty")
-                    _loginState.value = LoginState.Error("Login failed: No users found")
+                    Log.d("LOGIN", "Login failed: Email or password incorrect")
+                    _loginState.value = LoginState.Error("Email or password incorrect")
                 }
             }.onFailure { exception ->
                 Log.e("LOGIN", "Login error: ${exception.message}", exception)
@@ -46,4 +49,5 @@ class LoginViewModel : ViewModel() {
             }
         }
     }
+
 }

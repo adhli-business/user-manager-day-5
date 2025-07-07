@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupBottomNavigation()
+        setSupportActionBar(findViewById(R.id.mainToolbar))
     }
 
     private fun setupBottomNavigation() {
