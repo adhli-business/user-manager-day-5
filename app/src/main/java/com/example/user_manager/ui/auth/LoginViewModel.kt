@@ -22,32 +22,28 @@ class LoginViewModel : ViewModel() {
     private val _loginState = MutableStateFlow<LoginState>(LoginState.Idle)
     val loginState: StateFlow<LoginState> = _loginState
 
-    fun login(email: String, password: String) {
+    fun login(username: String, password: String) {
         viewModelScope.launch {
             _loginState.value = LoginState.Loading
-            Log.d("LOGIN", "Sending login request...")
 
-            val result = repository.getAllUsers(1, 0)
+            val result = repository.loginUser(username, password)
 
             result.onSuccess { response ->
-                Log.d("LOGIN", "API success: ${response.users.size} users found")
-
-                val user = response.users.find {
-                    it.email.equals(email, ignoreCase = true) && it.password == password
-                }
-
-                if (user != null) {
-                    Log.d("LOGIN", "Login success: ${user.email}")
-                    _loginState.value = LoginState.Success(user)
-                } else {
-                    Log.d("LOGIN", "Login failed: Email or password incorrect")
-                    _loginState.value = LoginState.Error("Email or password incorrect")
-                }
-            }.onFailure { exception ->
-                Log.e("LOGIN", "Login error: ${exception.message}", exception)
-                _loginState.value = LoginState.Error(exception.message ?: "Unknown error")
+                val user = User( // kalau kamu pakai model `User` lokal
+                    id = response.id,
+                    firstName = response.firstName,
+                    lastName = response.lastName,
+                    email = response.email,
+                    username = response.username,
+                    password = password, // opsional
+                    image = null // sesuaikan dengan kebutuhan
+                )
+                _loginState.value = LoginState.Success(user)
+            }.onFailure { e ->
+                _loginState.value = LoginState.Error(e.message ?: "Unknown error")
             }
         }
     }
+
 
 }

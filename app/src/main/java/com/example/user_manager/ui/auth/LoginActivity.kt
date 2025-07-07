@@ -35,11 +35,11 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupViews() {
         findViewById<Button>(R.id.btnLogin).setOnClickListener {
-            val email = findViewById<EditText>(R.id.etEmail).text.toString()
+            val username = findViewById<EditText>(R.id.etUsername).text.toString()
             val password = findViewById<EditText>(R.id.etPassword).text.toString()
 
-            if (validateInput(email, password)) {
-                viewModel.login(email, password)
+            if (validateInput(username, password)) {
+                viewModel.login(username, password)
             }
         }
     }

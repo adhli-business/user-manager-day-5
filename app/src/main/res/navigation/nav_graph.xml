@@ -49,4 +49,10 @@
         android:name="com.example.user_manager.ui.useradd.FragmentUserAdd"
         android:label="Add User" />
 
+    <fragment
+        android:id="@+id/nav_statistics"
+        android:name="com.example.user_manager.ui.userstatistics.FragmentUserStatistics"
+        android:label="User Statistics" />
+
+
 </navigation>

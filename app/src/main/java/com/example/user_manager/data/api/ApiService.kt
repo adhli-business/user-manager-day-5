@@ -1,6 +1,8 @@
 package com.example.user_manager.data.api
 
 // ApiService.kt
+import com.example.user_manager.data.models.LoginRequest
+import com.example.user_manager.data.models.LoginResponse
 import com.example.user_manager.data.models.UserResponse
 import retrofit2.Response
 import retrofit2.http.Body
@@ -26,6 +28,10 @@ interface ApiService {
     suspend fun addUser(
         @Body user: com.example.user_manager.data.models.UserRequest
     ): Response<com.example.user_manager.data.models.User>
+
+    @POST("auth/login")
+    suspend fun loginUser(@Body request: LoginRequest): Response<LoginResponse>
+
 
     @PUT("users/{id}")
     suspend fun updateUser(
