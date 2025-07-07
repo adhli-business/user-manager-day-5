@@ -16,12 +16,12 @@
         android:padding="12dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivUserPhoto"
+            android:id="@+id/ivProfile"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_user_placeholder"
             app:civ_border_width="1dp"
-            app:civ_border_color="#DDDDDD"/>
+            app:civ_border_color="#DDDDDD" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -35,18 +35,25 @@
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="John Doe"
+                android:text="Full Name"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="john@example.com"
+                android:text="user@email.com"
                 android:textSize="14sp"
-                android:textColor="@color/gray"/>
+                android:textColor="@android:color/darker_gray" />
 
+            <TextView
+                android:id="@+id/tvGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray" />
         </LinearLayout>
 
     </LinearLayout>

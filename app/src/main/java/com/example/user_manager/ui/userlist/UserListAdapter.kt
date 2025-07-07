@@ -21,7 +21,9 @@ class UserListAdapter(private val onItemClick: (User) -> Unit) :
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        val user = getItem(position)
+        println("🔄 Binding user: ${user.firstName} ${user.lastName}") // Optional debug
+        holder.bind(user)
     }
 
     inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -37,6 +39,7 @@ class UserListAdapter(private val onItemClick: (User) -> Unit) :
 
             Glide.with(itemView.context)
                 .load(user.image)
+                .placeholder(R.drawable.ic_user_placeholder) // Make sure this exists
                 .into(ivProfile)
 
             itemView.setOnClickListener {
