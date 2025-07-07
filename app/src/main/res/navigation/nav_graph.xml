@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentSearchUser">
 
+    <fragment
+        android:id="@+id/fragmentSearchUser"
+        android:name="com.example.user_manager.ui.searchuser.FragmentSearchUser"
+        android:label="Search User">
+        <action
+            android:id="@+id/action_searchUser_to_userDetail"
+            app:destination="@id/fragmentUserDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentUserDetail"
+        android:name="com.example.user_manager.ui.userdetail.FragmentUserDetail"
+        android:label="User Detail">
+        <action
+            android:id="@+id/action_userDetail_to_userEdit"
+            app:destination="@id/fragmentUserEdit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentUserEdit"
+        android:name="com.example.user_manager.ui.useredit.FragmentUserEdit"
+        android:label="Edit User" />
+
+    <fragment
+        android:id="@+id/fragmentUserList"
+        android:name="com.example.user_manager.ui.userlist.FragmentUserList"
+        android:label="User List">
+
+        <action
+            android:id="@+id/action_userList_to_userAdd"
+            app:destination="@id/fragmentUserAdd" />
+
+        <action
+            android:id="@+id/action_userList_to_userDetail"
+            app:destination="@id/fragmentUserDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentUserAdd"
+        android:name="com.example.user_manager.ui.useradd.FragmentUserAdd"
+        android:label="Add User" />
 </navigation>
